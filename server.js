@@ -327,7 +327,7 @@ function getMeetup(req, res) {
   }
   /////////MEETUP//////
   function Meetup(data) {
-    //this.link = data.link;
+    this.link = data.link;
     this.name = data.name;
     this.creation_data = data.creation_data;
     this.host = data.host;
@@ -337,7 +337,7 @@ function getMeetup(req, res) {
   
   Meetup.prototype.save = function(id) {
       
-    const SQL = `INSERT INTO meetup (name,creation_data,host,location_id) VALUES ($1, $2, $3, $4);`;
+    const SQL = `INSERT INTO meetup (lnk,name,creation_data,host,location_id) VALUES ($1, $2, $3, $4,$5);`;
     const value = Object.values(this);
     value.push(id);
     client.query(SQL, value);

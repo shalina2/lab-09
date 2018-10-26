@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS weather;
 DROP TABLE IF EXISTS yelp;
 DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS meetup;
 DROP TABLE IF EXISTS locations;
 
 CREATE TABLE locations (
@@ -42,7 +43,7 @@ CREATE TABLE movies (
 
 CREATE TABLE meetup (
   id SERIAL PRIMARY KEY,
-  
+  link VARCHAR(255),
   name VARCHAR(255),
   creation_data VARCHAR(255),
   host VARCHAR(255),
